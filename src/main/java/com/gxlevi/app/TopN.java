@@ -65,8 +65,8 @@ public class TopN {
                     ") with ("
                     + KafkaUtils.getKafkaDDL(brokers, topic, groupId) +
                     ")");
-            final Table table = tableEnv.sqlQuery("SELECT supplier,DATE_FORMAT(TUMBLE_START(bidtime,INTERVAL '30' SECOND),'yyyy-MM-dd HH:mm:ss') AS stt" +
-                    ",DATE_FORMAT(TUMBLE_END(bidtime,INTERVAL '30' SECOND),'yyyy-MM-dd HH:mm:ss') AS edt" +
+            final Table table = tableEnv.sqlQuery("SELECT supplier,TUMBLE_START(bidtime,INTERVAL '30' SECOND) AS stt" +
+                    ",TUMBLE_END(bidtime,INTERVAL '30' SECOND) AS edt" +
                     ",SUM(price) AS price" +
                     " FROM orders" +
                     " GROUP BY TUMBLE(bidtime,INTERVAL '30' SECOND),supplier");
