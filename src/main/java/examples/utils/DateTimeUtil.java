@@ -1,4 +1,4 @@
-package com.gxlevi.utils;
+package examples.utils;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;

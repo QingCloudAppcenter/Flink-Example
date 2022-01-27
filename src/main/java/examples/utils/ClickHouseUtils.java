@@ -1,6 +1,6 @@
-package com.gxlevi.utils;
+package examples.utils;
 
-import com.gxlevi.bean.TransientSink;
+import examples.bean.TransientSink;
 import lombok.SneakyThrows;
 import org.apache.flink.connector.jdbc.JdbcConnectionOptions;
 import org.apache.flink.connector.jdbc.JdbcExecutionOptions;

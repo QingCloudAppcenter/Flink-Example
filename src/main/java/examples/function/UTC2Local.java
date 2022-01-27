@@ -1,4 +1,4 @@
-package com.gxlevi.function;
+package examples.function;
 
 import org.apache.flink.table.functions.ScalarFunction;
 

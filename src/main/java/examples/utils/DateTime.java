@@ -1,4 +1,4 @@
-package com.gxlevi.utils;
+package examples.utils;
 
 import com.github.javafaker.DateAndTime;
 import com.github.javafaker.Faker;

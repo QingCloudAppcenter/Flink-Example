@@ -1,6 +1,6 @@
-package com.gxlevi.utils;
+package examples.utils;
 
-import com.gxlevi.app.MockData;
+import examples.app.MockData;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.flink.api.java.utils.ParameterTool;
 

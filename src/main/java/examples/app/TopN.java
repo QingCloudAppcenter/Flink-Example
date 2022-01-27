@@ -1,13 +1,13 @@
-package com.gxlevi.app;
+package examples.app;
 
 import com.alibaba.fastjson.JSONObject;
-import com.gxlevi.bean.Order;
-import com.gxlevi.bean.OrderPriceCount;
-import com.gxlevi.function.UTC2Local;
-import com.gxlevi.utils.ArgsUtils;
-import com.gxlevi.utils.ClickHouseUtils;
-import com.gxlevi.utils.DateTimeUtil;
-import com.gxlevi.utils.KafkaUtils;
+import examples.bean.Order;
+import examples.bean.OrderPriceCount;
+import examples.function.UTC2Local;
+import examples.utils.ArgsUtils;
+import examples.utils.ClickHouseUtils;
+import examples.utils.DateTimeUtil;
+import examples.utils.KafkaUtils;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.AggregateFunction;
 import org.apache.flink.api.common.state.ListState;

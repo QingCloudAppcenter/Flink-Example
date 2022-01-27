@@ -1,11 +1,11 @@
-package com.gxlevi.app;
+package examples.app;
 
 import com.alibaba.fastjson.JSONObject;
-import com.gxlevi.bean.Order;
+import examples.bean.Order;
 
-import com.gxlevi.utils.ArgsUtils;
-import com.gxlevi.utils.FlinkFaker;
-import com.gxlevi.utils.KafkaUtils;
+import examples.utils.ArgsUtils;
+import examples.utils.FlinkFaker;
+import examples.utils.KafkaUtils;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;

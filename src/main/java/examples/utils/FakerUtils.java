@@ -1,4 +1,4 @@
-package com.gxlevi.utils;
+package examples.utils;
 
 import org.apache.flink.table.data.*;
 import org.apache.flink.table.types.logical.*;

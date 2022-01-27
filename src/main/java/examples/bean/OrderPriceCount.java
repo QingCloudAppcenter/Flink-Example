@@ -1,4 +1,4 @@
-package com.gxlevi.bean;
+package examples.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
