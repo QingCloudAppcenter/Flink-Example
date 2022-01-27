@@ -1,5 +1,5 @@
 --创建表clickhouse_key_words
-CREATE TABLE clickhouse_key_words(
+create table clickhouse_key_words(
     province String,
     sex      String,
     word     String,
