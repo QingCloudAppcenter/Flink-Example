@@ -1,0 +1,10 @@
+class ScalaSexTrans extends ScalarFunction{
+  def eval(sexCode: Int) = {
+    if (sexCode==0){
+      "男"
+    }else{
+      "女"
+    }
+  }
+}
+stenv.registerFunction("sex_trans",new ScalaSexTrans())

@@ -37,11 +37,10 @@ public class MockData {
             public void run(SourceContext<Order> ctx) throws Exception {
                 while (!isCanceled) {
                     String time = faker.expression("#{date.past '5','1','SECONDS'}");
-                    final Order order = Order.builder()
-                            .supplier(faker.expression("#{regexify '(Alice|Bob|Carol|Alex|Joe|James|Jane|Jack)'}"))
-                            .price(Double.parseDouble(faker.expression("#{Number.randomDouble '2','1','150'}")))
-                            .bidtime(time.substring(0, time.lastIndexOf(".")))
-                            .build();
+                    final Order order = new Order();
+                    order.setSupplier(faker.expression("#{regexify '(Alice|Bob|Carol|Alex|Joe|James|Jane|Jack)'}"));
+                    order.setPrice(Double.parseDouble(faker.expression("#{Number.randomDouble '2','1','150'}")));
+                    order.setBidtime(time.substring(0, time.lastIndexOf(".")));
                     ctx.collect(order);
                     TimeUnit.MILLISECONDS.sleep(generateInterval);
                 }

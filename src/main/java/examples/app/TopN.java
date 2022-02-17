@@ -72,7 +72,7 @@ public class TopN {
                     " GROUP BY TUMBLE(bidtime,INTERVAL '30' SECOND),supplier");
             tableEnv.createTemporaryFunction("utc2local", new UTC2Local());
             tableEnv.createTemporaryView("order_tmp", table);
-            final Table tableTmp = tableEnv.sqlQuery("SELECT utc2local(stt) AS stt,utc2local(edt) AS edt,supplier,price FROM order_tmp");
+            final Table tableTmp = tableEnv.sqlQuery("SELECT CAST(utc2local(stt) AS STRING) AS stt,CAST(utc2local(edt) AS STRING) AS edt,supplier,price FROM order_tmp");
             aggStream = tableEnv.toAppendStream(tableTmp, OrderPriceCount.class);
         } else {
             final DataStream<Order> sourceWithWatered = env.addSource(KafkaUtils.getKafkaConsumer(brokers, groupId, topic))

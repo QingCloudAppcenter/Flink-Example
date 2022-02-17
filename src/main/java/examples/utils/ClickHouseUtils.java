@@ -1,7 +1,6 @@
 package examples.utils;
 
 import examples.bean.TransientSink;
-import lombok.SneakyThrows;
 import org.apache.flink.connector.jdbc.JdbcConnectionOptions;
 import org.apache.flink.connector.jdbc.JdbcExecutionOptions;
 import org.apache.flink.connector.jdbc.JdbcSink;
@@ -18,7 +17,6 @@ public class ClickHouseUtils {
     public static <T> SinkFunction<T> getSink(String url, String username, String password, String sql) {
         return JdbcSink.<T>sink(sql,
                 new JdbcStatementBuilder<T>() {
-                    @SneakyThrows
                     @Override
                     public void accept(PreparedStatement preparedStatement, T t) throws SQLException {
                         final Field[] fields = t.getClass().getDeclaredFields();
@@ -31,8 +29,13 @@ public class ClickHouseUtils {
                                 offset++;
                                 continue;
                             }
-                            final Object value = field.get(t);
-                            preparedStatement.setObject(i + 1 - offset, value);
+                            final Object value;
+                            try {
+                                value = field.get(t);
+                                preparedStatement.setObject(i + 1 - offset, value);
+                            } catch (IllegalAccessException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
                 }, new JdbcExecutionOptions.Builder()
