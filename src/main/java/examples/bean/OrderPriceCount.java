@@ -33,6 +33,9 @@ public class OrderPriceCount {
     }
 
     public String getStt() {
+        if (stt.contains(".")) {
+            stt = stt.substring(0, stt.lastIndexOf("."));
+        }
         return stt;
     }
 
@@ -41,10 +44,23 @@ public class OrderPriceCount {
     }
 
     public String getEdt() {
+        if (edt.contains(".")) {
+            edt = edt.substring(0, edt.lastIndexOf("."));
+        }
         return edt;
     }
 
     public void setEdt(String edt) {
         this.edt = edt;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderPriceCount{" +
+                "price=" + price +
+                ", supplier='" + supplier + '\'' +
+                ", stt='" + stt + '\'' +
+                ", edt='" + edt + '\'' +
+                '}';
     }
 }

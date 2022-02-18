@@ -74,6 +74,7 @@ public class TopN {
             tableEnv.createTemporaryView("order_tmp", table);
             final Table tableTmp = tableEnv.sqlQuery("SELECT CAST(utc2local(stt) AS STRING) AS stt,CAST(utc2local(edt) AS STRING) AS edt,supplier,price FROM order_tmp");
             aggStream = tableEnv.toAppendStream(tableTmp, OrderPriceCount.class);
+            aggStream.print().setParallelism(1);
         } else {
             final DataStream<Order> sourceWithWatered = env.addSource(KafkaUtils.getKafkaConsumer(brokers, groupId, topic))
                     .map(json -> JSONObject.parseObject(json, Order.class))

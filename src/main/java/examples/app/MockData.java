@@ -2,7 +2,6 @@ package examples.app;
 
 import com.alibaba.fastjson.JSONObject;
 import examples.bean.Order;
-
 import examples.utils.ArgsUtils;
 import examples.utils.FlinkFaker;
 import examples.utils.KafkaUtils;
