@@ -1,13 +1,14 @@
 package com.dataomnis.example.app;
 
 import com.alibaba.fastjson.JSONObject;
-import examples.bean.Order;
-import examples.bean.OrderPriceCount;
-import examples.function.UTC2Local;
-import examples.utils.ArgsUtils;
-import examples.utils.ClickHouseUtils;
-import examples.utils.DateTimeUtil;
-import examples.utils.KafkaUtils;
+
+import com.dataomnis.example.bean.Order;
+import com.dataomnis.example.bean.OrderPriceCount;
+import com.dataomnis.example.function.UTC2Local;
+import com.dataomnis.example.utils.ArgsUtils;
+import com.dataomnis.example.utils.ClickHouseUtils;
+import com.dataomnis.example.utils.DateTimeUtil;
+import com.dataomnis.example.utils.KafkaUtils;
 import org.apache.flink.api.common.eventtime.WatermarkStrategy;
 import org.apache.flink.api.common.functions.AggregateFunction;
 import org.apache.flink.api.common.state.ListState;

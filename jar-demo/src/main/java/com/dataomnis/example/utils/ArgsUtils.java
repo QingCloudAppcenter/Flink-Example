@@ -1,6 +1,7 @@
 package com.dataomnis.example.utils;
 
-import examples.app.MockData;
+
+import com.dataomnis.example.app.MockData;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.flink.api.java.utils.ParameterTool;
 

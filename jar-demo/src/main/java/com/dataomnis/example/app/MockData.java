@@ -1,10 +1,11 @@
 package com.dataomnis.example.app;
 
 import com.alibaba.fastjson.JSONObject;
-import examples.bean.Order;
-import examples.utils.ArgsUtils;
-import examples.utils.FlinkFaker;
-import examples.utils.KafkaUtils;
+
+import com.dataomnis.example.bean.Order;
+import com.dataomnis.example.utils.ArgsUtils;
+import com.dataomnis.example.utils.FlinkFaker;
+import com.dataomnis.example.utils.KafkaUtils;
 import org.apache.flink.api.java.utils.ParameterTool;
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
